@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-
 export default function Navbar() {
   const [user, setUser] = useState(null);
 
@@ -35,9 +34,10 @@ export default function Navbar() {
         <div className="flex gap-6 text-sm items-center">
           <Link href="/">Home</Link>
           <Link href="/courses">Courses</Link>
+        
           <Link href="/practice">Practice</Link>
           <Link href="/dashboard">Dashboard</Link>
-
+        
           {/* 🔹 If user logged in */}
           {user ? (
             <>
